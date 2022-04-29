@@ -1,10 +1,13 @@
 {
+  "extends": "./paths.json",
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "tags": ["styled", "css", "sty"]
+      }
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -18,9 +21,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src", "public/firebase-messaging-sw.js"]
 }
