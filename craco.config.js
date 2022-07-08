@@ -16,6 +16,7 @@ module.exports = {
             "@translations": path.resolve(__dirname, "./src/Translations"),
             "@validations": path.resolve(__dirname, "./src/Validations"),
             "@enums": path.resolve(__dirname, "./src/Enums"),
+            "@images": path.resolve(__dirname, "./src/Images"),
         },
     },
 };

@@ -13,7 +13,8 @@
       "@utils": ["src/Utils"],
       "@translations": ["src/Translations"],
       "@validations": ["src/Validations"],
-      "@enums": ["src/Enums"]
+      "@enums": ["src/Enums"],
+      "@images": ["src/Images"]
     }
   }
 }

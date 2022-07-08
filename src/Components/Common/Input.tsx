@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const Input = (props: Props) => {
-    return <div>Input</div>;
+    return <div>{props.test}</div>;
 };

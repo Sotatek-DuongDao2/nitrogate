@@ -1,11 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Home = () => {
-    return <StyledHome>HOME</StyledHome>;
+export const Login = () => {
+    return (
+        <StyledLogin>
+            <p className="intro">Login</p>
+        </StyledLogin>
+    );
 };
 
-const StyledHome = styled.div`
+const StyledLogin = styled.div`
     height: 100vh;
     width: 100%;
     display: flex;

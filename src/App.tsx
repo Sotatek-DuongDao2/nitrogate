@@ -1,22 +1,21 @@
 import React from "react";
-import { BrowserRouter, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import { routes } from "@configs";
-import { ComponentAppRoute } from "./Components/AppRoutes";
-import { IRoute } from "@interfaces";
+import { AppLayout } from "@layouts";
+import { Home, Login } from "@pages";
 
 function App() {
     return (
         <div className="App">
-            <BrowserRouter>
-                <Switch>
-                    {routes.map((e: IRoute, key) => (
-                        <ComponentAppRoute key={key} {...e} />
-                    ))}
-                </Switch>
-                {/* <ComponentToast /> */}
-            </BrowserRouter>
+            <Routes>
+                <Route element={<AppLayout />}>
+                    <Route index element={<Home />} />
+                    <Route path="./login" element={<Login />} />
+                    <Route path="*" element={<>Not Found</>} />
+                </Route>
+            </Routes>
+            {/* <ComponentToast /> */}
         </div>
     );
 }

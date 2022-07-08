@@ -5,7 +5,7 @@ export interface ILayout {
 }
 
 export interface IRoute {
-    path?: string;
+    path: string;
     component: React.ComponentType;
     layout?: React.ComponentType<ILayout>;
     exact: boolean;
