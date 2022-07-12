@@ -16,10 +16,6 @@ export const Login = () => {
   const navigate = useNavigate();
   const [isLoginFail, setIsLoginFail] = useState<boolean>(false);
 
-  const handleLogout = () => {
-    localStorage.setItem("accessToken", "");
-  };
-
   const handleForgotPassword = () => {
     navigate("/reset-password");
   };

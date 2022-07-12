@@ -14,7 +14,8 @@
       "@translations": ["src/Translations"],
       "@validations": ["src/Validations"],
       "@enums": ["src/Enums"],
-      "@images": ["src/Images"]
+      "@images": ["src/Images"],
+      "@styles": ["src/Styles"]
     }
   }
 }

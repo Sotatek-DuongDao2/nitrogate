@@ -8,9 +8,11 @@ export const AppLayout = () => {
   return (
     <StyledAppLayout>
       <Sidebar className="side_bar_container" />
-      <div className="app_content">
+      <div className="header_and_content">
         <Header />
-        <Outlet />
+        <div className="app_content">
+          <Outlet />
+        </div>
       </div>
     </StyledAppLayout>
   );

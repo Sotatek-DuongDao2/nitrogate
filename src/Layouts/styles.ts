@@ -6,11 +6,14 @@ export const StyledAppLayout = styled.div`
   flex-direction: row;
 
   .side_bar_container {
-    width: 300px;
+    width: auto;
   }
-  .app_content {
+  .header_and_content {
     width: 100%;
     background-color: ${colors.background};
+  }
+  .app_content {
+    padding: 31px 40px;
   }
 `;
 
