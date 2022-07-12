@@ -1,1 +1,9 @@
-export * from "./demo.svg";
+export { ReactComponent as Logo } from "./Logo.svg";
+export { ReactComponent as LogoNoText } from "./Logo_no_text.svg";
+export { ReactComponent as ArrowDown } from "./Arrow_down.svg";
+export { ReactComponent as ArrowLeft } from "./Arrow_left.svg";
+export { ReactComponent as Setting } from "./Setting.svg";
+export { ReactComponent as Transfer } from "./Transfer.svg";
+export { ReactComponent as AccountDetail } from "./Account_detail.svg";
+export { ReactComponent as Home } from "./Home.svg";
+export { ReactComponent as ArrowRight } from "./Arrow_right.svg";
