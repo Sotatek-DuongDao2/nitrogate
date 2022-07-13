@@ -1,14 +1,15 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import clsx from "clsx";
 
-import { colors } from "@utils";
 import { StyledCard, StyledTitleCard } from "@styles";
 
 interface IAggregated {
   title?: string;
   viewmore?: boolean;
   items: IAggregatedItem[];
+  classname?: string;
 }
 
 interface IAggregatedItem {
@@ -18,18 +19,18 @@ interface IAggregatedItem {
 }
 
 export const Aggregated = (props: IAggregated) => {
-  const { title, viewmore, items } = props;
+  const { title, viewmore, items, classname } = props;
   const navigate = useNavigate();
   return (
-    <StyledAggregated>
+    <StyledAggregated className={clsx(classname !== undefined && classname)}>
       <StyledCard>
         <div>
           <StyledTitleCard>{title}</StyledTitleCard>
-          {viewmore === true && (
+          {viewmore === true ? (
             <h3 className="view_more" onClick={() => navigate("/account-detail")}>
               VIEW MORE
             </h3>
-          )}
+          ) : null}
         </div>
         {items.length > 0 &&
           items.map((item, index) => (

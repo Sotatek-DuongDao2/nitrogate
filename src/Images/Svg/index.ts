@@ -7,3 +7,7 @@ export { ReactComponent as Transfer } from "./Transfer.svg";
 export { ReactComponent as AccountDetail } from "./Account_detail.svg";
 export { ReactComponent as Home } from "./Home.svg";
 export { ReactComponent as ArrowRight } from "./Arrow_right.svg";
+export { ReactComponent as Copy } from "./Copy.svg";
+export { ReactComponent as Generate } from "./Generate.svg";
+export { ReactComponent as Prev } from "./Prev.svg";
+export { ReactComponent as Next } from "./Next.svg";

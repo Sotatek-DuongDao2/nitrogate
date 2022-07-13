@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Select from "react-select";
+import { Select } from "antd";
+import "antd/dist/antd.min.css";
 
 import { StyledHeader } from "./styles";
 const options = [
