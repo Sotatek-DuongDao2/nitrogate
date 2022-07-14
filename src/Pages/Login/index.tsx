@@ -126,7 +126,8 @@ const StyledLogin = styled.div`
     }
   }
 
-  .login_fail {
+  .login_fail,
+  .error_message {
     font-size: 12px;
     color: red;
   }

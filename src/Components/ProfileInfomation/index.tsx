@@ -31,6 +31,7 @@ export const ProfileInfomation = (props: IProfileInfomation) => {
 const StyledProfileInfomation = styled.div`
   padding: 16px 25px;
   width: 100%;
+  height: 100%;
   background: #193b68;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   border-radius: 8px;

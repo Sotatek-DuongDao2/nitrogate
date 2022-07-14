@@ -18,19 +18,21 @@ interface IWithdrawal {
 
 export const NewWithdrawal = () => {
   const { Option } = Select;
-  const { handleChange, values, handleSubmit, errors, touched, setFieldValue } = useFormik({
-    initialValues: {
-      chain: "",
-      address: "",
-      withdrawalAmount: "",
-      actualAmount: "",
-      remarks: "",
-    },
-    onSubmit: (values: IWithdrawal) => {
-      console.log(values);
-    },
-    validationSchema: validationSchemaNewWithdrawal,
-  });
+  const { handleChange, values, handleSubmit, errors, touched, setFieldValue, resetForm } =
+    useFormik({
+      initialValues: {
+        chain: "",
+        address: "",
+        withdrawalAmount: "",
+        actualAmount: "",
+        remarks: "",
+      },
+      onSubmit: (values: IWithdrawal) => {
+        console.log(values);
+        resetForm();
+      },
+      validationSchema: validationSchemaNewWithdrawal,
+    });
   return (
     <StyledNewWithdrawal>
       <StyledTitlePage>NewWithdrawal</StyledTitlePage>
@@ -116,5 +118,8 @@ const StyledNewWithdrawal = styled.div`
   .form_login {
     display: flex;
     flex-direction: column;
+  }
+  .error_message {
+    color: red;
   }
 `;

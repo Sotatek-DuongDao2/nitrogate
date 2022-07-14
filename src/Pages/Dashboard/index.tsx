@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { PnlChart } from "./PnlChart";
 import { AggregatedBalances } from "./AggregatedBalances";
-import { ProfileInfomation } from "./ProfileInfomation";
+import { ProfileInfomation } from "@components";
 import { RecentTransfers } from "./RecentTransfers";
 
 export const DashBoard = () => {
