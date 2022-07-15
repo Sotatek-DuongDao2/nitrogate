@@ -20,23 +20,49 @@ export const DashBoard = () => {
   }, []);
   return (
     <StyledHome>
-      <ProfileInfomation classname="profile_container" />
-      <AggregatedBalances />
-      <RecentTransfers classname="recent_transfers_container" />
-      <PnlChart />
+      <div className="grid_profile">
+        <ProfileInfomation />
+      </div>
+      <div className="grid_aggregate_balance">
+        <AggregatedBalances />
+      </div>
+      <div className="grid_recent_transfers">
+        <RecentTransfers />
+      </div>
+      <div className="grid_pnlchart">
+        <PnlChart />
+      </div>
     </StyledHome>
   );
 };
 
 const StyledHome = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 32% 32% 31%;
+  grid-template-rows: auto auto auto auto;
+  /* flex-wrap: wrap;
+  justify-content: center; */
   gap: 24px;
+  .grid_profile {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .grid_aggregate_balance {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
 
-  .profile_container,
-  .recent_transfers_container {
-    width: 60%;
+  .grid_recent_transfers {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+  }
+  .grid_pnlchart {
+    grid-row-start: 3;
+    grid-row-end: 5;
   }
 `;

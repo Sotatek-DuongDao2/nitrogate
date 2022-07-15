@@ -27,4 +27,8 @@ export const RecentTransfers = (props: IRecentTransfers) => {
   );
 };
 
-const StyledRecentTransfers = styled.div``;
+const StyledRecentTransfers = styled.div`
+  display: flex;
+  height: 100%;
+  width: 100%;
+`;

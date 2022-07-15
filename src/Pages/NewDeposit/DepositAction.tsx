@@ -10,6 +10,7 @@ import { Copy } from "@images";
 
 export const DepositAction = () => {
   const { Option } = Select;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [text, setText] = useState<string>("TYuH18RT2rxRFtf...vErhePX8MSizH");
 
   // const inputHandler = (event: any) => {
@@ -20,6 +21,7 @@ export const DepositAction = () => {
     await navigator.clipboard.writeText(text);
     alert("Text copied");
   };
+
   return (
     <StyledDepositAction>
       <StyledCard>

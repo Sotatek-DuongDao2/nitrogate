@@ -20,3 +20,4 @@ export { ReactComponent as Phone } from "./Phone.svg";
 export { ReactComponent as Zipcode } from "./ZipCode.svg";
 export { ReactComponent as Mail } from "./Mail.svg";
 export { ReactComponent as Setup } from "./Setup.svg";
+export { ReactComponent as CloseModal } from "./CloseModal.svg";

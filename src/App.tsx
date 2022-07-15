@@ -40,10 +40,13 @@ function App() {
           <Route path="/withdrawal-history" element={<WithdrawalHistory />} />
           <Route path="/new-deposit" element={<NewDeposit />} />
         </Route>
+
         <Route element={<LoginLayout />}>
           <Route path="/login" element={<Login />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
         </Route>
+
+        <Route path="/reset-password" element={<ResetPassword />} />
+
         <Route path="*" element={<>Not Found</>} />
       </Routes>
       {/* <ComponentToast /> */}
