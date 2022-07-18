@@ -7,7 +7,7 @@ import { Header, Sidebar } from "@components";
 export const AppLayout = () => {
   return (
     <StyledAppLayout>
-      <Sidebar className="side_bar_container" />
+      <Sidebar />
       <div className="header_and_content">
         <Header />
         <div className="app_content">

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -9,15 +9,15 @@ import { RecentTransfers } from "./RecentTransfers";
 
 export const DashBoard = () => {
   const navigate = useNavigate();
-  console.log(localStorage.getItem("accessToken"));
 
   //if don't have accesToken, push to login page
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (localStorage.getItem("accessToken") === "") {
       navigate("/login");
     }
     return;
   }, []);
+
   return (
     <StyledHome>
       <div className="grid_profile">

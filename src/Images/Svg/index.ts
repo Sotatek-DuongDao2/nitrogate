@@ -21,3 +21,7 @@ export { ReactComponent as Zipcode } from "./ZipCode.svg";
 export { ReactComponent as Mail } from "./Mail.svg";
 export { ReactComponent as Setup } from "./Setup.svg";
 export { ReactComponent as CloseModal } from "./CloseModal.svg";
+export { ReactComponent as ArrowSideBarRight } from "./Arrow_sidebar_right.svg";
+export { ReactComponent as MiniPrefixSidebar } from "./MiniPrefixSidebar.svg";
+export { ReactComponent as BigPrefixSidebar } from "./BigPrefixSidebar.svg";
+export { ReactComponent as DropdownHeader } from "./DropdownHeader.svg";

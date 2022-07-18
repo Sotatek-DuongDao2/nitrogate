@@ -21,6 +21,8 @@ import {
   UpdateProfile,
 } from "@pages";
 
+document.title = "HeliumPay";
+
 function App() {
   return (
     <div className="App">
