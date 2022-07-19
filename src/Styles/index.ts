@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { colors } from "@utils";
-import { Input } from "antd";
 
 export const StyledCard = styled.div`
   width: inherit;
@@ -22,7 +21,7 @@ export const StyledTitleCard = styled.h1`
 `;
 
 export const StyledTitlePage = styled.h1`
-  margin: 0;
+  margin-bottom: 25px;
   font-weight: 900;
   font-size: 32px;
   line-height: 42px;

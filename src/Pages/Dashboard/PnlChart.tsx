@@ -23,24 +23,24 @@ ChartJS.register(
   Tooltip
 );
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = ["May 31", "Jun 3", "Jun 6", "Jun 9", "Jun 12", "Jun 15"];
 
-export const data = {
+const data = {
   labels,
   datasets: [
     {
       type: "line" as const,
-      label: "Dataset 1",
-      borderColor: "rgb(255, 99, 132)",
-      borderWidth: 2,
+      label: "Cumulative PNL",
+      borderColor: "#1F77B4",
+      borderWidth: 1,
       fill: false,
-      data: labels.map(() => faker.datatype.number({ min: -100, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: -10, max: 10 })),
     },
     {
       type: "bar" as const,
-      label: "Dataset 2",
-      backgroundColor: "rgb(75, 192, 192)",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      label: "Daily PNL (bps)",
+      backgroundColor: "#FF7F0E",
+      data: labels.map(() => faker.datatype.number({ min: -10, max: 10 })),
       borderColor: "white",
       borderWidth: 2,
     },
@@ -61,4 +61,6 @@ export const PnlChart = () => {
   );
 };
 
-const StyledPnlChart = styled.div``;
+const StyledPnlChart = styled.div`
+  display: flex;
+`;

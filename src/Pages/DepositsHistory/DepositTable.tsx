@@ -9,11 +9,84 @@ export const DepositTable = () => {
     <StyledDepositTable>
       <StyledCard>
         <FlexTable
-          head={["Sender address", "Recipient address", "cryptocurrency", "amount", "Tx hash"]}
+          head={[
+            "Sender Address",
+            "Recipient Address",
+            "Client ID",
+            "Cryptocurrency",
+            "Amount",
+            "Fee Charges",
+            "Amount after fees",
+            "Timestamp",
+            "Tx hash",
+          ]}
           body={[
-            [<p>123</p>, <p>abc</p>, <p>asxasx</p>, <p>asasxas</p>, <p>fghfgh</p>],
-            [<p>123</p>, <p>abc</p>, <p>asxasx</p>, <p>asasxas</p>, <p>fghfgh</p>],
-            [<p>123</p>, <p>abc</p>, <p>asxasx</p>, <p>asasxas</p>, <p>fghfgh</p>],
+            [
+              <p>Baker style address</p>,
+              <p>Baker style address</p>,
+              <p>123</p>,
+              <p>USDT_TRC20</p>,
+              <p>123.456</p>,
+              <p>345.678</p>,
+              <p>345.678</p>,
+              <p>12/10/2022</p>,
+              <p>123b123b132n1231v23123132</p>,
+            ],
+            [
+              <p>Baker style address</p>,
+              <p>Baker style address</p>,
+              <p>123</p>,
+              <p>USDT_TRC20</p>,
+              <p>123.456</p>,
+              <p>345.678</p>,
+              <p>345.678</p>,
+              <p>12/10/2022</p>,
+              <p>123b123b132n1231v23123132</p>,
+            ],
+            [
+              <p>Baker style address</p>,
+              <p>Baker style address</p>,
+              <p>123</p>,
+              <p>USDT_TRC20</p>,
+              <p>123.456</p>,
+              <p>345.678</p>,
+              <p>345.678</p>,
+              <p>12/10/2022</p>,
+              <p>123b123b132n1231v23123132</p>,
+            ],
+            [
+              <p>Baker style address</p>,
+              <p>Baker style address</p>,
+              <p>123</p>,
+              <p>USDT_TRC20</p>,
+              <p>123.456</p>,
+              <p>345.678</p>,
+              <p>345.678</p>,
+              <p>12/10/2022</p>,
+              <p>123b123b132n1231v23123132</p>,
+            ],
+            [
+              <p>Baker style address</p>,
+              <p>Baker style address</p>,
+              <p>123</p>,
+              <p>USDT_TRC20</p>,
+              <p>123.456</p>,
+              <p>345.678</p>,
+              <p>345.678</p>,
+              <p>12/10/2022</p>,
+              <p>123b123b132n1231v23123132</p>,
+            ],
+            [
+              <p>Baker style address</p>,
+              <p>Baker style address</p>,
+              <p>123</p>,
+              <p>USDT_TRC20</p>,
+              <p>123.456</p>,
+              <p>345.678</p>,
+              <p>345.678</p>,
+              <p>12/10/2022</p>,
+              <p>123b123b132n1231v23123132</p>,
+            ],
           ]}
         />
       </StyledCard>
@@ -21,4 +94,8 @@ export const DepositTable = () => {
   );
 };
 
-const StyledDepositTable = styled.div``;
+const StyledDepositTable = styled.div`
+  > div {
+    overflow-x: auto;
+  }
+`;

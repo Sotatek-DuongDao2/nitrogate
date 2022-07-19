@@ -25,3 +25,8 @@ export { ReactComponent as ArrowSideBarRight } from "./Arrow_sidebar_right.svg";
 export { ReactComponent as MiniPrefixSidebar } from "./MiniPrefixSidebar.svg";
 export { ReactComponent as BigPrefixSidebar } from "./BigPrefixSidebar.svg";
 export { ReactComponent as DropdownHeader } from "./DropdownHeader.svg";
+export { ReactComponent as ArrowRightBlue } from "./ArrowRightBlue.svg";
+export { ReactComponent as Search } from "./Search.svg";
+export { ReactComponent as ArrowDownGray } from "./ArrowDownGray.svg";
+export { ReactComponent as Line } from "./Line.svg";
+export { ReactComponent as LineHorizontal } from "./LineHorizontal.svg";

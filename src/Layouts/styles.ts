@@ -6,6 +6,8 @@ export const StyledAppLayout = styled.div`
   display: flex;
   flex-direction: row;
 
+  /* overflow: ; */
+
   .side_bar_container {
   }
   .header_and_content {

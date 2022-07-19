@@ -32,6 +32,9 @@ export const StyledSidebar = styled.div`
   h3 {
     text-align: left;
     margin: 0;
+
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Standard syntax */
   }
 
   h2 {

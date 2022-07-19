@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { CSVLink } from "react-csv";
-import { Pagination } from "antd";
-import type { PaginationProps } from "antd";
+// import { Pagination } from "antd";
+// import type { PaginationProps } from "antd";
 
 import "antd/dist/antd.min.css";
 
 import { StyledTitlePage } from "@styles";
 import { DepositTable } from "./DepositTable";
 import { Filter } from "./Filter";
-import { Generate, Next, Prev } from "@images";
+import { Generate } from "@images";
 
 const csvData = [
   ["firstname", "lastname", "email"],
@@ -19,26 +19,29 @@ const csvData = [
 ];
 
 export const DepositsHistory = () => {
-  const itemRender: PaginationProps["itemRender"] = (_: any, type: any, originalElement: any) => {
-    if (type === "prev") {
-      return <Prev />;
-    }
-    if (type === "next") {
-      return <Next />;
-    }
-    return originalElement;
-  };
+  // const itemRender: PaginationProps["itemRender"] = (_: any, type: any, originalElement: any) => {
+  //   if (type === "prev") {
+  //     return <Prev />;
+  //   }
+  //   if (type === "next") {
+  //     return <Next />;
+  //   }
+  //   return originalElement;
+  // };
   return (
     <StyledDepositsHistory>
       <StyledTitlePage>DepositsHistory</StyledTitlePage>
       <Filter />
-      <DepositTable />
+
+      <div className="deposit_table_container">
+        <DepositTable />
+      </div>
       <div className="footer">
         <CSVLink data={csvData} filename={"my-file.csv"} target="_blank">
           <Generate />
           Generate csv
         </CSVLink>
-        <Pagination
+        {/* <Pagination
           total={100}
           pageSize={10}
           showTitle={false}
@@ -46,7 +49,7 @@ export const DepositsHistory = () => {
           showLessItems
           onChange={(page, pageSize) => console.log(page, pageSize)}
           itemRender={itemRender}
-        />
+        /> */}
       </div>
       {/* <CSVDownload data={csvData} target="_blank" /> */}
     </StyledDepositsHistory>
@@ -55,9 +58,16 @@ export const DepositsHistory = () => {
 
 const StyledDepositsHistory = styled.div`
   .footer {
+    width: 130px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+
     background: #e9edf3;
     border-radius: 4px;
+  }
+
+  .deposit_table_container {
+    margin-bottom: 20px;
   }
 `;

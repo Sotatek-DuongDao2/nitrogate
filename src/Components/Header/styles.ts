@@ -11,6 +11,14 @@ export const StyledHeader = styled.div`
   height: 70px;
   border-bottom: 1px solid #ccc;
 
+  .ant-select-focused .ant-select-selector,
+  .ant-select-selector:focus,
+  .ant-select-selector:active,
+  .ant-select-open .ant-select-selector {
+    border-color: none !important;
+    box-shadow: none !important;
+  }
+
   .select_language {
     margin-right: 20px;
     cursor: pointer;
@@ -32,10 +40,6 @@ export const StyledHeader = styled.div`
       border: 0px;
       border-color: transparent;
       background: inherit;
-    }
-    .ant-select-focused:not(.ant-select-disabled) {
-      border: 0px;
-      border-color: transparent;
     }
   }
   .profile {

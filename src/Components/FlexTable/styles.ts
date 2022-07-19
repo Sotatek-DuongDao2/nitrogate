@@ -2,50 +2,56 @@ import styled from "styled-components";
 
 export const StyledFlexTable = styled.div`
   .table {
-    border: 1px solid $border;
-    border-radius: 5px;
-    word-break: break-all;
     width: 100%;
-    min-width: 900px;
+    border-collapse: collapse;
+    border-spacing: 30px;
+
     .head {
-      font-weight: 700;
-      background: $table-head;
+      width: 100%;
+      border-bottom: 2px solid #e9edf3;
+
+      font-size: 14px;
+      line-height: 22px;
+
+      letter-spacing: -0.2px;
+
+      color: #b0b2b9;
+    }
+
+    th {
+      font-weight: 600;
     }
 
     .body {
       & > .row:last-child > .cell {
-        border-bottom: 0;
+        /* border-bottom: 0; */
       }
     }
 
     tr {
-      height: 60px;
-      @media (max-width: $breakpoint) {
-        height: 50px;
-      }
+      border-bottom: 1px solid #e9edf3;
     }
 
-    tr td:first-child,
-    tr th:first-child {
-      padding-left: $gutter;
-      /* @media (max-width: $breakpoint) {
-        padding-left: $gutter-small;
-      } */
+    tr td:not(:first-child),
+    tr th:not(:first-child) {
+      padding-left: 70px;
     }
   }
 
   .cell {
-    padding: 0;
-    /* padding-right: $gutter; */
-    padding-right: 10px;
-    max-width: 300px;
-    overflow: hidden;
+    text-align: left;
+    padding: 12px 0px;
+
     white-space: nowrap;
     text-overflow: ellipsis;
-    border-bottom: 1px solid $border;
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 22px;
 
-    /* @media (max-width: $breakpoint) {
-      padding-right: $gutter-small;
-    } */
+      letter-spacing: -0.2px;
+
+      color: #1d263a;
+    }
   }
 `;

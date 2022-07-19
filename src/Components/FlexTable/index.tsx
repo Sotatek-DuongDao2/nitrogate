@@ -2,6 +2,8 @@ import React, { ReactNode } from "react";
 // import s from "./FlexTable.module.scss";
 import c from "classnames";
 
+import { StyledFlexTable } from "./styles";
+
 type Props = {
   head?: ReactNode[];
   body: ReactNode[][];
@@ -10,6 +12,7 @@ type Props = {
   bodyStyle?: React.CSSProperties;
   headClassName?: string;
   bodyClassName?: string;
+  noData?: ReactNode;
 };
 export const FlexTable = ({
   head,
@@ -18,6 +21,7 @@ export const FlexTable = ({
   headClassName,
   bodyClassName,
   tableStyle,
+  noData,
 }: Props) => {
   const renderHeader = (item: ReactNode, index: number) => (
     <th className="cell" key={index}>
@@ -31,20 +35,23 @@ export const FlexTable = ({
   );
 
   return (
-    <table className="table" style={{ ...tableStyle }}>
-      {head && (
-        <thead>
-          <tr className={c("head", headClassName)} style={{ ...headStyle }}>
-            {head.map(renderHeader)}
-          </tr>
-        </thead>
-      )}
+    <StyledFlexTable>
+      <table className="table" style={{ ...tableStyle }}>
+        {head && (
+          <thead>
+            <tr className={c("head", headClassName)} style={{ ...headStyle }}>
+              {head.map(renderHeader)}
+            </tr>
+          </thead>
+        )}
 
-      <tbody className={c("body", bodyClassName)}>
-        {body.map((row, index) => (
-          <tr key={index}>{row.map(renderCell)}</tr>
-        ))}
-      </tbody>
-    </table>
+        <tbody className={c("body", bodyClassName)}>
+          {body.map((row, index) => (
+            <tr key={index}>{row.map(renderCell)}</tr>
+          ))}
+        </tbody>
+      </table>
+      {noData}
+    </StyledFlexTable>
   );
 };

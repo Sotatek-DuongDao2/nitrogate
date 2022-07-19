@@ -7,3 +7,4 @@ export * from "./FlexTable";
 export * from "./ProfileInfomation";
 export * from "./InfoCard";
 export * from "./CustomModal";
+export * from "./NoData";
