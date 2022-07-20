@@ -33,13 +33,13 @@ export const DepositsHistory = () => {
       <StyledTitlePage>DepositsHistory</StyledTitlePage>
       <Filter />
 
-      <div className="deposit_table_container">
+      <div className="table_container">
         <DepositTable />
       </div>
       <div className="footer">
-        <CSVLink data={csvData} filename={"my-file.csv"} target="_blank">
+        <CSVLink data={csvData} filename={"my-file.csv"} target="_blank" className="csv_generate">
           <Generate />
-          Generate csv
+          <h3>Generate csv</h3>
         </CSVLink>
         {/* <Pagination
           total={100}
@@ -67,7 +67,24 @@ const StyledDepositsHistory = styled.div`
     border-radius: 4px;
   }
 
-  .deposit_table_container {
+  .csv_generate {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6.5px 11px;
+    h3 {
+      margin: 0;
+
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+
+      letter-spacing: -0.2px;
+      color: #1e87f0;
+    }
+  }
+
+  .table_container {
     margin-bottom: 20px;
   }
 `;

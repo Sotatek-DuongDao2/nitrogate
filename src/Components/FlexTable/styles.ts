@@ -1,6 +1,24 @@
 import styled from "styled-components";
 
 export const StyledFlexTable = styled.div`
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    background: #f3f5f6;
+  }
+
+  &::-webkit-scrollbar {
+    height: 7px;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #d2d5e4;
+    &:hover {
+      background: #c2c5d1;
+    }
+  }
+
   .table {
     width: 100%;
     border-collapse: collapse;

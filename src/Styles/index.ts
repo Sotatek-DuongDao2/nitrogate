@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "@utils";
+import { Select } from "antd";
 
 export const StyledCard = styled.div`
   width: inherit;

@@ -4,25 +4,27 @@ import styled from "styled-components";
 import { Aggregated } from "@components";
 import { DepositAction } from "./DepositAction";
 import { StyledTitlePage } from "@styles";
+import Us2Img from "../../Images/Us2Coint.png";
+import ErcImg from "../../Images/ErcCoin.png";
 
 const ar = [
   {
-    icon: <div></div>,
+    icon: <img src={Us2Img} alt="us2" />,
     name: "USDT-TRC20",
     value: 230123123,
   },
   {
-    icon: <div></div>,
+    icon: <img src={Us2Img} alt="us2" />,
     name: "USDT-TRC20",
     value: 230123123,
   },
   {
-    icon: <div></div>,
+    icon: <img src={ErcImg} alt="erc" />,
     name: "USDT-TRC20",
     value: 230123123,
   },
   {
-    icon: <div></div>,
+    icon: <img src={Us2Img} alt="us2" />,
     name: "USDT-TRC20",
     value: 230123123,
   },
@@ -33,13 +35,17 @@ export const NewDeposit = () => {
     <StyledNewDeposit>
       <StyledTitlePage>New deposit</StyledTitlePage>
       <div className="new_deposit_container">
-        <Aggregated
-          title="Aggregated Balances"
-          items={ar}
-          viewmore={false}
-          classname="new_deposit"
-        />
-        <DepositAction />
+        <div>
+          <Aggregated
+            title="Aggregated Balances"
+            items={ar}
+            viewmore={false}
+            classname="new_deposit"
+          />
+        </div>
+        <div>
+          <DepositAction />
+        </div>
       </div>
     </StyledNewDeposit>
   );
@@ -48,7 +54,9 @@ export const NewDeposit = () => {
 const StyledNewDeposit = styled.div`
   .new_deposit_container {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    gap: 24px;
+    > div {
+      flex: 1;
+    }
   }
 `;

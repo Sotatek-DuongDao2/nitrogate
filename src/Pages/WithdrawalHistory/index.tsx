@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { CSVLink } from "react-csv";
-import { Pagination } from "antd";
-import type { PaginationProps } from "antd";
+// import type { PaginationProps } from "antd";
 
 import { StyledTitlePage } from "@styles";
 import { Filter } from "./Filter";
 import { WithdrawalTable } from "./WithdrawalTable";
-import { Generate, Next, Prev } from "@images";
+import { Generate } from "@images";
 
 const csvData = [
   ["firstname", "lastname", "email"],
@@ -17,26 +16,28 @@ const csvData = [
 ];
 
 export const WithdrawalHistory = () => {
-  const itemRender: PaginationProps["itemRender"] = (_: any, type: any, originalElement: any) => {
-    if (type === "prev") {
-      return <Prev />;
-    }
-    if (type === "next") {
-      return <Next />;
-    }
-    return originalElement;
-  };
+  // const itemRender: PaginationProps["itemRender"] = (_: any, type: any, originalElement: any) => {
+  //   if (type === "prev") {
+  //     return <Prev />;
+  //   }
+  //   if (type === "next") {
+  //     return <Next />;
+  //   }
+  //   return originalElement;
+  // };
   return (
     <StyledWithdrawalHistory>
       <StyledTitlePage>Withdrawal History</StyledTitlePage>
       <Filter />
-      <WithdrawalTable />
+      <div className="table_container">
+        <WithdrawalTable />
+      </div>
       <div className="footer">
-        <CSVLink data={csvData} filename={"my-file.csv"} target="_blank">
+        <CSVLink data={csvData} filename={"my-file.csv"} target="_blank" className="csv_generate">
           <Generate />
-          Generate csv
+          <h3>Generate csv</h3>
         </CSVLink>
-        <Pagination
+        {/* <Pagination
           total={100}
           pageSize={10}
           showTitle={false}
@@ -44,7 +45,7 @@ export const WithdrawalHistory = () => {
           showLessItems
           onChange={(page, pageSize) => console.log(page, pageSize)}
           itemRender={itemRender}
-        />
+        /> */}
       </div>
     </StyledWithdrawalHistory>
   );
@@ -52,7 +53,32 @@ export const WithdrawalHistory = () => {
 
 const StyledWithdrawalHistory = styled.div`
   .footer {
+    width: 130px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+
+    background: #e9edf3;
+    border-radius: 4px;
+  }
+
+  .csv_generate {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6.5px 11px;
+    h3 {
+      margin: 0;
+
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+
+      letter-spacing: -0.2px;
+      color: #1e87f0;
+    }
+  }
+  .table_container {
+    margin-bottom: 20px;
   }
 `;

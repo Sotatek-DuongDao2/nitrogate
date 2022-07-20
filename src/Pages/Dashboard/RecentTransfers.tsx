@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import clsx from "clsx";
 
-import { FlexTable, NoData } from "@components";
+import {
+  FlexTable,
+  // NoData
+} from "@components";
 import { StyledCard, StyledTitleCard } from "@styles";
 
 interface IRecentTransfers {

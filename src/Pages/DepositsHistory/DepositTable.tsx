@@ -7,7 +7,7 @@ import { FlexTable } from "@components";
 export const DepositTable = () => {
   return (
     <StyledDepositTable>
-      <StyledCard>
+      <StyledCard className="custommize_scrollbar">
         <FlexTable
           head={[
             "Sender Address",
@@ -96,6 +96,6 @@ export const DepositTable = () => {
 
 const StyledDepositTable = styled.div`
   > div {
-    overflow-x: auto;
+    /* overflow-x: auto; */
   }
 `;

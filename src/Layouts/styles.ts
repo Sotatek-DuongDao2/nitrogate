@@ -6,7 +6,7 @@ export const StyledAppLayout = styled.div`
   display: flex;
   flex-direction: row;
 
-  /* overflow: ; */
+  /* overflow-x: auto; */
 
   .side_bar_container {
   }
@@ -16,6 +16,7 @@ export const StyledAppLayout = styled.div`
   }
   .app_content {
     padding: 31px 40px;
+    max-width: 1185px;
   }
 `;
 

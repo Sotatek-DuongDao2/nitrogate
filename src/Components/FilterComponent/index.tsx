@@ -58,37 +58,29 @@ export const Filter = () => {
 
       <div>
         <div className="filter_date">
-          <label htmlFor="date">Date</label>
           <div>
-            <div>
-              <DatePicker
-                onChange={onChange}
-                disabledDate={(current) => disableDate(current)}
-                placeholder="Start Time"
-                id="date"
-              />
-            </div>
-            <LineHorizontal className="line_horizontal" />
-            <div>
-              <DatePicker
-                onChange={onChange}
-                disabledDate={(current) => disableDate(current)}
-                placeholder="End Time"
-                id="date"
-              />
-            </div>
+            <DatePicker
+              onChange={onChange}
+              disabledDate={(current) => disableDate(current)}
+              placeholder="Start Time"
+            />
+          </div>
+          <LineHorizontal className="line_horizontal" />
+          <div>
+            <DatePicker
+              onChange={onChange}
+              disabledDate={(current) => disableDate(current)}
+              placeholder="End Time"
+            />
           </div>
         </div>
         <div className="filter_select">
-          <label htmlFor="cryptocurrency">Cryptocurrency</label>
-          <div>
-            <Select defaultValue={"USDT_TRC20"} id="cryptocurrency">
-              <Option value="USDT_TRC20">USDT_TRC20</Option>
-              <Option value="USDT_ERC20">USDT_ERC20</Option>
-              <Option value="USDC_ERC20">USDC_ERC20</Option>
-              <Option value="US2">US2</Option>
-            </Select>
-          </div>
+          <Select defaultValue={"USDT_TRC20"}>
+            <Option value="USDT_TRC20">USDT_TRC20</Option>
+            <Option value="USDT_ERC20">USDT_ERC20</Option>
+            <Option value="USDC_ERC20">USDC_ERC20</Option>
+            <Option value="US2">US2</Option>
+          </Select>
         </div>
         <StyledButton>
           <button>Filter</button>
@@ -108,16 +100,6 @@ const StyledFilter = styled.div`
   > div:last-child {
     display: flex;
     gap: 20px;
-  }
-
-  label {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
-
-    letter-spacing: -0.2px;
-
-    color: #626674;
   }
 
   .filter_search {
@@ -151,29 +133,27 @@ const StyledFilter = styled.div`
   }
 
   .filter_date {
-    > div {
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
 
-      cursor: pointer;
+    cursor: pointer;
 
-      .line_horizontal {
-        margin: 0 5px;
-      }
+    .line_horizontal {
+      margin: 0 5px;
+    }
 
-      .ant-picker {
-        border: 2px solid #d2d5e4;
-        border-radius: 8px;
-        height: 46px;
-        background-color: transparent;
-      }
+    .ant-picker {
+      border: 2px solid #d2d5e4;
+      border-radius: 8px;
+      height: 46px;
+      background-color: transparent;
+    }
 
-      .ant-picker-focused,
-      .ant-picker:hover {
-        border: 2px solid #d2d5e4;
-        outline: none !important;
-        box-shadow: none !important;
-      }
+    .ant-picker-focused,
+    .ant-picker:hover {
+      border: 2px solid #d2d5e4;
+      outline: none !important;
+      box-shadow: none !important;
     }
   }
 
@@ -208,6 +188,10 @@ const StyledFilter = styled.div`
 
   button {
     width: 86px;
+  }
+
+  .ant-tooltip-inner {
+    background-color: #ccc;
   }
 `;
 
