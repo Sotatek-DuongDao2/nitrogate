@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import "./App.css";
+// import "./App.css";
 import { AppLayout, LoginLayout } from "@layouts";
 import {
   AccountDetail,
@@ -18,7 +18,10 @@ import {
   ResetPassword,
   Transfer,
   WithdrawalHistory,
+  UpdateProfile,
 } from "@pages";
+
+document.title = "HeliumPay";
 
 function App() {
   return (
@@ -32,16 +35,20 @@ function App() {
           <Route path="/deposits-history" element={<DepositsHistory />} />
           <Route path="/faga-authentication" element={<FAGAAuthentication />} />
           <Route path="/profile" element={<MyProfile />} />
+          <Route path="profile/update" element={<UpdateProfile />} />
           <Route path="/batch-withdrawal" element={<NewBatchWithdrawal />} />
           <Route path="/new-withdrawal" element={<NewWithdrawal />} />
           <Route path="/transfer" element={<Transfer />} />
           <Route path="/withdrawal-history" element={<WithdrawalHistory />} />
           <Route path="/new-deposit" element={<NewDeposit />} />
         </Route>
+
         <Route element={<LoginLayout />}>
           <Route path="/login" element={<Login />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
         </Route>
+
+        <Route path="/reset-password" element={<ResetPassword />} />
+
         <Route path="*" element={<>Not Found</>} />
       </Routes>
       {/* <ComponentToast /> */}

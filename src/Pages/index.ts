@@ -12,3 +12,4 @@ export * from "./ResetPassword";
 export * from "./Transfer";
 export * from "./WithdrawalHistory";
 export * from "./NewDeposit";
+export * from "./UpdateProfile";

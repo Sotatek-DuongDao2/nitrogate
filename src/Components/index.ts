@@ -4,3 +4,7 @@ export * from "./Header";
 export * from "./Loading";
 export * from "./Aggregated";
 export * from "./FlexTable";
+export * from "./ProfileInfomation";
+export * from "./InfoCard";
+export * from "./CustomModal";
+export * from "./NoData";
