@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ProfileInfomation } from "@components";
 import { BasicInfo } from "./BasicInfo";
 import { OtherInfo } from "./OtherInfo";
-import { StyledTitlePage } from "@styles";
+import { StyledTitlePage, StyledButton } from "@styles";
 
 export const MyProfile = () => {
   const navigate = useNavigate();
@@ -13,9 +13,12 @@ export const MyProfile = () => {
     <StyledMyProfile>
       <div>
         <StyledTitlePage>MyProfile</StyledTitlePage>
-        <button onClick={() => navigate("/profile/update")} className="btn_update">
-          Update Shop Info
-        </button>
+
+        <StyledButton className="btn_update">
+          <button onClick={() => navigate("/profile/update")} className="btn_update">
+            Update Shop Info
+          </button>
+        </StyledButton>
       </div>
 
       <div className="profile_content">
@@ -53,20 +56,10 @@ const StyledMyProfile = styled.div`
       grid-row-end: 3;
     }
   }
+
   .btn_update {
-    width: 155px;
-    height: 36px;
-    cursor: pointer;
-
-    background: #193b68;
-    border-radius: 8px;
-
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 22px;
-
-    letter-spacing: -0.2px;
-
-    color: #ffffff;
+    button {
+      padding: 7px 20px;
+    }
   }
 `;

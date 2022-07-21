@@ -90,6 +90,9 @@ const StyledProfileInfomation = styled.div`
   }
   .id {
     z-index: 1;
+    background: #2c5080;
+    border-radius: 5px;
+    padding: 4px 12px;
 
     font-weight: 700;
     font-size: 14px;

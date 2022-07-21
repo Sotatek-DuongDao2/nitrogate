@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { CSVLink } from "react-csv";
 import { useDropzone } from "react-dropzone";
 
-import { StyledCard, StyledTitlePage } from "@styles";
+import { StyledCard, StyledTitlePage, StyledButton } from "@styles";
 import uploadCsvImg from "../../Images/UploadCsv.png";
 import { Generate } from "@images";
 
@@ -37,7 +37,9 @@ export const NewBatchWithdrawal = () => {
     <StyledNewBatchWithdrawal>
       <StyledTitlePage>New Batch Withdrawals</StyledTitlePage>
       <StyledCard className="new_batch_container">
-        <img src={uploadCsvImg} alt="upload" />
+        <div>
+          <img src={uploadCsvImg} alt="upload" />
+        </div>
 
         <div {...getRootProps()} className="generate">
           <input {...getInputProps()} />
@@ -49,19 +51,21 @@ export const NewBatchWithdrawal = () => {
           ) : (
             <>
               <Generate />
-              Attach completed CSV
+              <h3> Attach completed CSV</h3>
             </>
           )}
         </div>
 
-        <div className="generate">
-          <CSVLink data={csvData} filename={"my-file.csv"} target="_blank">
+        <div className="generate last_generate">
+          <CSVLink data={csvData} filename={"my-file.csv"} target="_blank" className="generate_csv">
             <Generate />
-            Generate csv
+            <h3> Generate csv</h3>
           </CSVLink>
         </div>
 
-        <button className="btn_next">Next</button>
+        <StyledButton className="btn_submit">
+          <button className="btn_next">Next</button>
+        </StyledButton>
       </StyledCard>
     </StyledNewBatchWithdrawal>
   );
@@ -71,15 +75,54 @@ const StyledNewBatchWithdrawal = styled.div`
   .new_batch_container {
     width: 40%;
   }
+
+  .new_batch_container > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 76px 0;
+  }
+
   .generate {
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
     width: 100%;
-    margin-bottom: 10px;
+    height: 35px;
+    padding-left: 125px;
+    margin-bottom: 20px;
+
     background: #e9edf3;
     border-radius: 4px;
+
+    h3 {
+      margin: 0;
+
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+
+      letter-spacing: -0.2px;
+
+      color: #1e87f0;
+    }
+
+    .generate_csv {
+      display: flex;
+    }
   }
-  .btn_next {
-    width: 100%;
-    cursor: pointer;
+
+  .last_generate {
+    margin-bottom: 40px;
+  }
+
+  .btn_submit {
+    input {
+      cursor: pointer;
+      width: 100%;
+    }
   }
 `;

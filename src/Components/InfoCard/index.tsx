@@ -22,6 +22,7 @@ export const InfoCard = (props: IInfoCard) => {
 
 const StyledInfoCard = styled.div`
   display: flex;
+  gap: 12px;
   .content {
     display: flex;
     flex-direction: column;

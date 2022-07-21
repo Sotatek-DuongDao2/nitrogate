@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Select } from "antd";
+import { Select, Tooltip } from "antd";
 import QRCode from "qrcode.react";
 
 import "antd/dist/antd.min.css";
 
 import { StyledCard } from "@styles";
-import { Copy } from "@images";
+import { Copy, DropdownHeader } from "@images";
 
 export const DepositAction = () => {
   const { Option } = Select;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [text, setText] = useState<string>("TYuH18RT2rxRFtf...vErhePX8MSizH");
+  const [isVisibleTooltip, setIsVisibleTooltip] = useState<boolean>(false);
 
   // const inputHandler = (event: any) => {
   //   setText(event.target.value);
@@ -19,7 +20,14 @@ export const DepositAction = () => {
 
   const copy = async () => {
     await navigator.clipboard.writeText(text);
-    alert("Text copied");
+
+    setIsVisibleTooltip(true);
+
+    const timer = setTimeout(() => {
+      setIsVisibleTooltip(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
   };
 
   return (
@@ -28,7 +36,7 @@ export const DepositAction = () => {
         <h3>Select chain</h3>
 
         <div className="select_chain">
-          <Select defaultValue="all">
+          <Select defaultValue="all" suffixIcon={<DropdownHeader />}>
             <Option value="all">All</Option>
             <Option value="1515">1515</Option>
             <Option value="1516">1516</Option>
@@ -44,7 +52,9 @@ export const DepositAction = () => {
             <h4>Wallet address</h4>
             <div className="qrcode_copy">
               <h3>TYuH18RT2rxRFtf...vErhePX8MSizH</h3>
-              <Copy onClick={copy} />
+              <Tooltip title="Copied" visible={isVisibleTooltip}>
+                <Copy onClick={copy} />
+              </Tooltip>
             </div>
           </div>
         </div>
@@ -123,6 +133,7 @@ const StyledDepositAction = styled.div`
       margin: 0;
     }
     p {
+      margin-bottom: 24px;
       width: 60%;
       font-weight: 400;
 

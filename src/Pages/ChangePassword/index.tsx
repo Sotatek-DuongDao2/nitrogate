@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-import { StyledCard, StyledTitlePage } from "@styles";
+import { StyledCard, StyledTitlePage, StyledInput, StyledButton } from "@styles";
 import { CustomModal } from "@components";
 import { SavedPasswordModal } from "./SavedPasswordModal";
 
@@ -41,27 +41,37 @@ export const ChangePassword = () => {
         <StyledCard>
           <div className="change_password_item">
             <label htmlFor="currentPassword">Current password</label>
-            <input
-              type="text"
-              id="currentPassword"
-              name="currentPassword"
-              placeholder="Enter current password"
-            />
+            <StyledInput>
+              <input
+                type="text"
+                id="currentPassword"
+                name="currentPassword"
+                placeholder="Enter current password"
+              />
+            </StyledInput>
           </div>
 
           <div className="change_password_item">
             <label htmlFor="newPassword">New password</label>
-            <input type="text" id="newPassword" name="newPassword" placeholder="Example" />
+            <StyledInput>
+              <input type="text" id="newPassword" name="newPassword" placeholder="Example" />
+            </StyledInput>
           </div>
 
           <div className="change_password_item">
             <label htmlFor="reEnterPassword">Re-enter new password</label>
-            <input type="text" id="reEnterPassword" name="reEnterPassword" placeholder="" />
+            <StyledInput>
+              <input type="text" id="reEnterPassword" name="reEnterPassword" placeholder="" />
+            </StyledInput>
           </div>
 
           <div className="btn">
-            <button onClick={handleCancel}>Cancel</button>
-            <button onClick={handleSave}>Save password</button>
+            <StyledButton>
+              <button onClick={handleCancel}>Cancel</button>
+            </StyledButton>
+            <StyledButton>
+              <button onClick={handleSave}>Save password</button>
+            </StyledButton>
           </div>
         </StyledCard>
       </div>
@@ -89,6 +99,8 @@ const StyledChangePassword = styled.div`
     flex-direction: column;
 
     label {
+      margin-bottom: 5px;
+
       font-weight: 600;
       font-size: 14px;
       line-height: 22px;
@@ -97,50 +109,30 @@ const StyledChangePassword = styled.div`
 
       color: #626674;
     }
-
-    input {
-      height: 46px;
-      padding: 0 20px;
-
-      background: #ffffff;
-      border: 2px solid #d2d5e4;
-      border-radius: 8px;
-    }
   }
 
   .btn {
     display: flex;
     gap: 15px;
-    height: 46px;
 
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.0075em;
-    > button:first-child {
+    > div:first-child {
       flex: 1;
-      background: #ffffff;
-      border: 2px solid rgba(25, 59, 104, 0.4);
-      border-radius: 10px;
+      button {
+        background: #ffffff;
+        border: 2px solid rgba(25, 59, 104, 0.4);
+        border-radius: 10px;
 
-      color: #193b68;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+
+        letter-spacing: -0.0075em;
+
+        color: #193b68;
+      }
     }
-    > button:last-child {
+    > div:last-child {
       flex: 1;
-      background: #193b68;
-      border-radius: 10px;
-
-      color: #ffffff;
-    }
-
-    button {
-      cursor: pointer;
-      &:hover {
-        transform: scale(1.05, 1.05);
-      }
-      &:active {
-        transform: scale(0.95, 0.95);
-      }
     }
   }
 `;
