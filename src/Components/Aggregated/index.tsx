@@ -52,7 +52,9 @@ export const Aggregated = (props: IAggregated) => {
 };
 
 const StyledAggregated = styled.div`
+  display: flex;
   width: 100%;
+  height: 100%;
 
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.02);
   border-radius: 8px;

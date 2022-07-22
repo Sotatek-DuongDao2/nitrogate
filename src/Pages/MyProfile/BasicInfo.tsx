@@ -36,7 +36,10 @@ const StyledBasicInfo = styled.div`
   height: 100%;
   width: 100%;
 
+  margin-bottom: 19px;
+
   .basic_info {
+    margin-top: 27px;
     display: grid;
     grid-template-columns: auto auto;
     row-gap: 20px;

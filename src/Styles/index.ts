@@ -33,8 +33,9 @@ export const StyledTitlePage = styled.h1`
 `;
 
 export const StyledInput = styled.div`
-  width: auto;
+  width: 100%;
   input {
+    width: 100%;
     background: #ffffff;
 
     border: 2px solid #d2d5e4;

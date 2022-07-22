@@ -5,7 +5,7 @@ import moment from "moment";
 
 import "antd/dist/antd.min.css";
 
-import { Search, ArrowDownGray, Line, LineHorizontal } from "@images";
+import { Search, ArrowDownGray, Line, LineHorizontal, DropdownHeader } from "@images";
 import { StyledButton } from "@styles";
 
 export const Filter = () => {
@@ -82,7 +82,7 @@ export const Filter = () => {
       <div className="filter_select">
         <label htmlFor="status">Status</label>
         <div>
-          <Select defaultValue={"Pending"} id="status">
+          <Select defaultValue={"Pending"} id="status" suffixIcon={<DropdownHeader />}>
             <Option value="USDT_TRC20">Pending</Option>
             <Option value="USDT_ERC20">Successful</Option>
             <Option value="USDC_ERC20">Failed</Option>
@@ -93,7 +93,7 @@ export const Filter = () => {
       <div className="filter_select">
         <label htmlFor="cryptocurrency">Cryptocurrency</label>
         <div>
-          <Select defaultValue={"USDT_TRC20"} id="cryptocurrency">
+          <Select defaultValue={"USDT_TRC20"} id="cryptocurrency" suffixIcon={<DropdownHeader />}>
             <Option value="USDT_TRC20">USDT_TRC20</Option>
             <Option value="USDT_ERC20">USDT_ERC20</Option>
             <Option value="USDC_ERC20">USDC_ERC20</Option>

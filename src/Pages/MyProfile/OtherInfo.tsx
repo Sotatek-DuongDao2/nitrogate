@@ -32,6 +32,7 @@ const StyledOtherInfo = styled.div`
   height: 100%;
   width: 100%;
   .other {
+    margin-top: 27px;
     display: flex;
     flex-direction: column;
     gap: 20px;

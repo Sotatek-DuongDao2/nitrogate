@@ -5,7 +5,7 @@ import moment from "moment";
 
 import "antd/dist/antd.min.css";
 
-import { Search, ArrowDownGray, Line, LineHorizontal } from "@images";
+import { Search, ArrowDownGray, Line, LineHorizontal, DropdownHeader } from "@images";
 import { StyledButton } from "@styles";
 
 export const Filter = () => {
@@ -79,10 +79,11 @@ export const Filter = () => {
             </div>
           </div>
         </div>
+
         <div className="filter_select">
           <label htmlFor="cryptocurrency">Cryptocurrency</label>
           <div>
-            <Select defaultValue={"USDT_TRC20"} id="cryptocurrency">
+            <Select defaultValue={"USDT_TRC20"} id="cryptocurrency" suffixIcon={<DropdownHeader />}>
               <Option value="USDT_TRC20">USDT_TRC20</Option>
               <Option value="USDT_ERC20">USDT_ERC20</Option>
               <Option value="USDC_ERC20">USDC_ERC20</Option>
@@ -90,6 +91,7 @@ export const Filter = () => {
             </Select>
           </div>
         </div>
+
         <StyledButton>
           <button>Filter</button>
         </StyledButton>
@@ -107,6 +109,7 @@ const StyledFilter = styled.div`
 
   > div:last-child {
     display: flex;
+    align-items: flex-end;
     gap: 20px;
   }
 
